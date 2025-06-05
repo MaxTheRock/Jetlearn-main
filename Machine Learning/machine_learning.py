@@ -1,5 +1,5 @@
-
-import numpy
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
 x = [1,2,3,4,5]
 y = [5,4,3,2,1]
@@ -24,3 +24,12 @@ print(gradient)
 intercept = mean_of_y - (gradient * mean_of_x)
 
 print(intercept)
+
+a = np.array([[1],[2],[3],[4],[5]])
+b = np.array([[2],[6],[1],[8],[3]])
+
+res = LinearRegression().fit(a,b) # Predicts a relationship between a and b
+
+print()
+print("m = ",res.coef_)
+print("c = ", res.intercept_)
